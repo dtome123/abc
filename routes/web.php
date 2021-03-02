@@ -14,7 +14,7 @@ use app\Http\Controllers\TestController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+//helo cac ban
 Route::get('/', function () {
     return view('welcome');
 });
