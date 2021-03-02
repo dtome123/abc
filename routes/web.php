@@ -14,7 +14,7 @@ use app\Http\Controllers\TestController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+//hello
 Route::get('/', function () {
     return view('welcome');
 });
