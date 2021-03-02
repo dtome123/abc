@@ -26,7 +26,20 @@ class CartController extends Controller
         }
        
         session()->put('cart',$cart);
-        echo session()->get("cart")[$id]['name'];
+        //echo session()->get("cart")[$id]['name'];
+        if($this->exist($id)){
+            echo 'ton tai'.$id;
+        }
+        else{
+        return
+                '<li id="item-cart-'.$phone->id.'">
+                    <a href="#" class="remove" data-idremove="'.$phone->id.'" title="Remove this item"><i class="fa fa-remove" ></i></a>
+                    <a class="cart-img" href="#"><img src="https://via.placeholder.com/70x70" alt="#"></a>
+                    <h4><a id="text">'.$phone->name.'</a></h4>
+                    <p class="quantity"> 1 x  <span class="amount">'.$phone->price.'</span></p>
+                </li>';
+        }    
+            
         
     }
     public function remove(Request $req){
@@ -35,5 +48,14 @@ class CartController extends Controller
         unset($cart[$id]);
         session()->put('cart',$cart);
         return 0;
+    }
+    public function exist($id){
+        $cart = session()->get('cart');
+        foreach ($cart as $i) {
+            if($i == $id){
+                return true;
+            }
+        }
+        return false;
     }
 }

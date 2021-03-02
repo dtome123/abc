@@ -51,5 +51,4 @@ Route::get('shopgrid/AddToCart', 'CartController@add');
 Route::get('shopgrid/re', 'CartController@remove');
 
 
-
     

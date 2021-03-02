@@ -353,20 +353,20 @@
 			<span id="a"></span>
 @endsection
 @section('script')
-{{-- <script src="{{ asset('js/code/ajax.js') }}"></script> --}}
+<script src="{{ asset('js/code/ajax.js') }}"></script>
 <script>
-	$('.btn').click(function () {
-	var id = $(this).data("id"); 
-	$.get("shopgrid/AddToCart",{id:id},function(data){
-		$('#text').text(data);
-	});	
-});
-	$('.remove').click(function () { 
-		var id = $(this).data("idremove");
-		$.get("shopgrid/re",{id:id},function(){
-			alert("xóa thành công");
-		});
+// 	$('.btn').click(function () {
+// 	var id = $(this).data("id"); 
+// 	$.get("shopgrid/AddToCart",{id:id},function(data){
+// 		$('#text').text(data);
+// 	});	
+// });
+// 	$('.remove').click(function () { 
+// 		var id = $(this).data("idremove");
+// 		$.get("shopgrid/re",{id:id},function(){
+// 			alert("xóa thành công");
+// 		});
 		
-	});
+// 	});
 </script>
 @endsection

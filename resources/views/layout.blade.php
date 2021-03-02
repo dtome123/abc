@@ -158,11 +158,11 @@
 										</span>
 										<a href="#">View Cart</a>
 									</div>
-									<ul class="shopping-list">
+									<ul class="shopping-list" id="list-items">
 										@if (session()->has('cart'))
 											@foreach ($items as $item)
-											<li>
-												<a href="#" class="remove" data-idremove="{{$item['id']}}" title="Remove this item"><i class="fa fa-remove"></i></a>
+											<li id="item-cart-{{$item['id']}}">
+												<a href="#" class="remove" data-idremove="{{$item['id']}}" title="Remove this item"><i class="fa fa-remove" onclick="remove({{$item['id']}})"></i></a>
 												<a class="cart-img" href="#"><img src="https://via.placeholder.com/70x70" alt="#"></a>
 												<h4><a id="text">{{$item['name']}}</a></h4>
 												<p class="quantity">{{$item['quantity']}} x  <span class="amount">{{$item['price']}}</span></p>
